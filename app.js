@@ -105,7 +105,10 @@ app.get('/allusers',(req,res)=>{
      res.end();
  })
 })
-
+app.get('/test',(req,res)=>{
+    res.write("Tested Connected");
+    res.end();
+})
 app.get('/',(req,res)=>{
     res.end('Connected');
 })
@@ -113,4 +116,4 @@ app.get('/',(req,res)=>{
 
 //var port = process.env.PORT || 3000;
 //console.log("server is listineg",port)
-app.listen(8081);
+app.listen(8080);
