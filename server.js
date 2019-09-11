@@ -166,7 +166,7 @@ protectedroutes.get('/allusers',(req,res)=>{
     })   
 })
 
-app.get("/",(req,res)=>{
+protectedroutes.get("/",(req,res)=>{
     res.write("status connected");
     res.end();
 })
