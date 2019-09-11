@@ -166,8 +166,8 @@ protectedroutes.get('/allusers',(req,res)=>{
     })   
 })
 
-protectedroutes.get("/",(req,res)=>{
-    res.write("status connected");
+app.get("/",(req,res)=>{
+    res.json({"Message":"Application Emitted","Live":"active","status":true})
     res.end();
 })
 
