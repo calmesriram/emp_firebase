@@ -180,7 +180,6 @@ protectedroutes.get("/payload/",(req,res)=>{
     res.json("hai")
 })
 
-
 var port = process.env.PORT || 3000;
 app.listen(port);
-console.log("port is An Active:",port);
+console.log(port);
