@@ -17,7 +17,14 @@ app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });
-
+protectedroutes.use(bodyparser.json());
+protectedroutes.use(bodyparser.urlencoded({extended:true}));
+protectedroutes.use(cors());
+protectedroutes.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
     var url = "mongodb+srv://sriram:sriram@cluster0-htdg9.mongodb.net/"
     // var url = "mongodb://127.0.0.1:27017/"
     var DBname = "myemployee"
@@ -63,8 +70,6 @@ protectedroutes.use((req,res,next)=>{
     }
     // res.end();
 })
-protectedroutes.use(bodyparser.json());
-protectedroutes.use(bodyparser.urlencoded({extended:true}));
 
 app.post("/login",(req,res)=>{
 
